@@ -1,0 +1,15 @@
+[v2] add                 
+transforms.RandomCrop(32, padding=4),
+transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.2),
+transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
+
+[v3] change optimizer
+optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9) -> optimizer = optim.Adam(model.parameters(), lr=0.001)
+
+[v4] change learning rate, and set epochs to 100
+optimizer = optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
+
+[v5] change learning rate, and set epochs back to 50, but add scheduler to change lr, and early stop condition
+
+
+#final use [v4]  
